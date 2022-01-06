@@ -24,8 +24,8 @@ export default class Application extends EventEmitter {
     
    
     this.emit(Application.events.READY);
-    this._beat = new Beat();
     
+
   }
   _create(){
     
