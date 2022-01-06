@@ -22,8 +22,10 @@ export default class Application extends EventEmitter {
 
     document.querySelector(".main").appendChild(message);
     
-   this._beat = new Beat();
+   
     this.emit(Application.events.READY);
+    this._beat = new Beat();
+    
   }
   _create(){
     
