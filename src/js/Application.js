@@ -24,11 +24,11 @@ export default class Application extends EventEmitter {
     
    
     this.emit(Application.events.READY);
-   this.addListener(Beat.events.BIT, function(){
+   Beat.addListener(Beat.events.BIT, function(){
      console.log('bit');
      
    });
-   this.emit(Beat.events.BIT)
+   Beat.emit(Beat.events.BIT)
 
   }
   _create(){
