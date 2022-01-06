@@ -41,6 +41,17 @@ export default class Application extends EventEmitter {
 
   }
   _create(){
+    this._beat.addListener(Beat.events.BIT, function(){
+      for(let i = 0; i < lyrics.length; i++){
+  
+        const message = document.createElement("div");
+        message.classList.add("message");
+        message.innerText = lyrics[i];
     
+        document.querySelector(".main").appendChild(message);
+  
+      }
+       
+     });
   }
 }
