@@ -21,7 +21,9 @@ export default class Application extends EventEmitter {
     message.innerText = "Ah";
 
     document.querySelector(".main").appendChild(message);
-
+    
+    this.addListener(Beat.events.BIT);
+    this.emit(Beat.events.BIT);
     this.emit(Application.events.READY);
   }
   _create(){
