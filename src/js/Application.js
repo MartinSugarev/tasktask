@@ -29,8 +29,8 @@ export default class Application extends EventEmitter {
     for(let i = 0; i < lyrics.length; i++){
 
       const message = document.createElement("div");
-      message[i].classList.add("message");
-      message[i].innerText = "Ah";
+      message.classList.add("message");
+      message.innerText = lyrics[i];
   
       document.querySelector(".main").appendChild(message);
 
