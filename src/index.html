@@ -11,5 +11,60 @@
   </head>
   <body>
     <div class="main"></div>
+    <script>
+    class Application{
+  static get events() {
+    return {
+      READY: "ready",
+    };
+  }
+
+  constructor() {
+    
+
+   
+   
+    const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
+    let count = 0;
+
+    const message = document.createElement("div");
+    message.classList.add("message");
+    message.innerText = "Ah";
+
+    document.querySelector(".main").appendChild(message);
+    
+   
+    //this.emit(Application.events.READY);
+   // this._beat = new Beat();
+    
+
+  
+  
+
+  }
+  _create(){
+    const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
+    
+      for(let i = 0; i < lyrics.length; i++){
+  
+        const message = document.createElement("div");
+        message.classList.add("message");
+        message.innerText = lyrics[i];
+    
+        document.querySelector(".main").appendChild(message);
+  
+      }
+       
+    
+  }
+}
+window.addEventListener("DOMContentLoaded", () => {
+  // This block will be executed once the page is loaded and ready
+  const app = new Application();
+  app._create()
+  // Used to access the app instance by the automated tests
+  window.__JS_APP = app;
+});
+    </script>
   </body>
 </html>
