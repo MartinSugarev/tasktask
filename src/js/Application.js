@@ -25,43 +25,22 @@ export default class Application extends EventEmitter {
    
     this.emit(Application.events.READY);
     this._beat = new Beat();
-    this._beat.addListener(Beat.events.BIT, function(){
-    for(let i = 0; i < lyrics.length; i++){
+    
 
-      const message = document.createElement("div");
-      message.classList.add("message");
-      message.innerText = lyrics[i];
-  
-      document.querySelector(".main").appendChild(message);
-
-    }
-     
-   });
-   this._beat.on(Beat.events.BIT, function(){
-    for(let i = 0; i < lyrics.length; i++){
-
-      const message = document.createElement("div");
-      message.classList.add("message");
-      message.innerText = lyrics[i];
-  
-      document.querySelector(".main").appendChild(message);
-
-    }
-     
-   });
-   this.addListener(Beat.events.BIT, function(){
-    for(let i = 0; i < lyrics.length; i++){
-
-      const message = document.createElement("div");
-      message.classList.add("message");
-      message.innerText = lyrics[i];
-  
-      document.querySelector(".main").appendChild(message);
-
-    }
-     
-   });
     this._beat.emit(Beat.events.BIT)
+    this._beat.addListener(Beat.events.BIT, function(){
+      for(let i = 0; i < lyrics.length; i++){
+  
+        const message = document.createElement("div");
+        message.classList.add("message");
+        message.innerText = lyrics[i];
+    
+        document.querySelector(".main").appendChild(message);
+  
+      }
+       
+     });
+  
 
   }
   _create(){
