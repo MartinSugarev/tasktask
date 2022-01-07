@@ -25,13 +25,15 @@ export default class Application extends EventEmitter {
    
     this.emit(Application.events.READY);
 
-    this._beat.listenerCount(Beat.events.BIT, function(){
+    this._beat = new Beat();
+
+    this._beat.addListener(Beat.events.BIT, function(){
       count++
       for(let i = 0; i < lyrics.length; i++){
   
         const message = document.createElement("div");
         message.classList.add("message");
-        message.innerText = lyrics[i];
+        message.innerText = lyrics[count];
     
         document.querySelector(".main").appendChild(message);
   
@@ -39,7 +41,7 @@ export default class Application extends EventEmitter {
        
      });
 
-    this._beat = new Beat();
+  
     
 
     //this._beat.emit(Beat.events.BIT)
