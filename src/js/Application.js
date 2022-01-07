@@ -46,6 +46,7 @@ export default class Application extends EventEmitter {
 
   }
   _create(){
+    this._beat = new Beat();
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
     this._beat.addListener(Beat.events.BIT, function(){
       for(let i = 0; i < lyrics.length; i++){
