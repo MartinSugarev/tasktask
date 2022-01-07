@@ -29,7 +29,7 @@ export default class Application extends EventEmitter {
 
     //this._beat.emit(Beat.events.BIT)
 
-    this.addListener(Beat.events.BIT, function(){
+    this.on(Beat.events.BIT, function(){
       count++
       for(let i = 0; i < lyrics.length; i++){
   
