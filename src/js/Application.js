@@ -24,12 +24,8 @@ export default class Application extends EventEmitter {
     
    
     this.emit(Application.events.READY);
-    this._beat = new Beat();
-    
 
-    //this._beat.emit(Beat.events.BIT)
-
-    this.on(Beat.events.BIT, function(){
+    this._beat.listenerCount(Beat.events.BIT, function(){
       count++
       for(let i = 0; i < lyrics.length; i++){
   
@@ -42,6 +38,13 @@ export default class Application extends EventEmitter {
       }
        
      });
+
+    this._beat = new Beat();
+    
+
+    //this._beat.emit(Beat.events.BIT)
+
+    
   
 
   }
