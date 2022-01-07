@@ -29,24 +29,19 @@ export default class Application extends EventEmitter {
 
     this._beat.addListener(Beat.events.BIT, function(){
       count++
-      for(let i = 0; i < lyrics.length; i++){
-  
+      if(count >= lyrics.length){
+        count = 0
+      }
+      for(let i = count; i < lyrics.length; i++){
         const message = document.createElement("div");
         message.classList.add("message");
-        message.innerText = lyrics[count];
+        message.innerText = lyrics[i];
     
         document.querySelector(".main").appendChild(message);
   
       }
        
      });
-
-  
-    
-
-    //this._beat.emit(Beat.events.BIT)
-
-    
   
 
   }
